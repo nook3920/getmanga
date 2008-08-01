@@ -73,10 +73,11 @@ end
 mangaimages = {}
 findMangaPages("Bleach").each do |mpage|
     puts "Getting #{mpage}"
+    dirname = mpage.split('/')[-2..-1].join('/')+"/"
     ilist = getImages(mpage)
-    FileUtils.mkdir_p(mpage)
+    FileUtils.mkdir_p(dirname)
     ilist.each do |url|
-        downloadImage(mpage, url)
+        downloadImage(dirname, url)
     end
     puts "done"
 end

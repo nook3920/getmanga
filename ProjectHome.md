@@ -1,0 +1,1 @@
+Onemanga.com scraper
